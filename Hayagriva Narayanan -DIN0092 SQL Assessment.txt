@@ -1,0 +1,104 @@
+***********SQL Assessment***********
+
+1. Name: Hayagriva Narayanan B
+
+2. Disys ID: DIN0092
+
+3. Existing Database
+
+4. Host name for MySQL
+
+5. SHOW DATABASES LIKE '%test%'
+
+6. COUNT(*) can be used to count the number of rows/records
+
+7. Image question (7-11)
+
+8. SELECT REPLACE(FIRST_NAME) FROM EMPLOYEES;   (Using a semicolon indicates the end of the code)
+
+9. SELECT * FROM WORKERS
+   ORDER BY FIRST_NAME, DEPARTMENT DESC;
+
+10. SELECT * FROM WORKERS WHERE FIRST_NAME NOT IN ('Vipul','Sathish');
+
+11. SELECT * FROM WORKERS WHERE FIRST_NAME ______ (Doubt)
+
+12. Image Question (12-17)
+
+13. SELECT COUNT(*)
+    SELECT Gender, DOB FROM EmployeeInfo where DOB BETWEEN '02/05/1970' AND '31/12/1975'
+
+14. SELECT E.EmpFname , E.EmpLname, P.EmpPosition
+    FROM EmployeeInfo E INNER JOINT EmployeePosition P ON
+    E.EmpID = P.EmpID AND P.EmpPosition IN ('Manager')
+
+15. Maximum Salary():
+    
+    SELECT TOP 1 salary,Name
+    FROM ( SELECT DISTINCT TOP n salary, Name
+    FROM employee
+    ORDER BY salary DESC)
+    ORDER BY salary
+
+    Minimum Salary():
+    
+    SELECT TOP 1 Salary
+    FROM (
+    SELECT DISTINCT TOP n salary
+    FROM employee
+    ORDER BY salary ASC) a
+    ORDER BY salary
+
+16. INSERT INTO EmployeeInfo
+    VALUES('7','Hayagriva Narayanan','1','Admin','P3','Delhi(DEL)','17/04/2000')
+
+17. DELETE FROM EmployeePostition where EmpPosition = 'lead'
+
+18. Image Question(18-20)
+
+19. ***FULL OUTER JOIN***
+    SELECT
+    d.date,
+    i.name,
+    i.is_veg,
+    d.price,
+    d.units_sold
+    FROM daily_menu d
+	FULL OUTER JOIN menu_items i
+	ON d.item_id = i.item_id
+
+20. SELECT
+    d.date,
+    i.name,
+    i.is_veg,
+    d.price,
+    d.units_sold,
+    FROM daily_menu d
+	RIGHT JOIN menu_items i
+	ON d.item_id = i.item_id
+
+21. Image Question(21-)
+
+22. SELECT max(salary),avg(salary),min(salary) from EmployeeSalary
+
+23. SELECT EmpID FROM EmployeeDetails
+    UNION
+    SELECT EmpID FROM EmployeeSalary;
+
+24. SELECT Fullname,
+    LENGTH (FULLNAME) - LENGTH(REPLACE(Fullname,'n',' '))
+    FROM EmployeeDetails;
+
+25. SELECT EmpName,Salary from Employee WHERE Salary>= 5000 AND Salary<=10000
+
+26. SELECT Project, count(EmpId) EmpProjectCount
+    FROM EmployeeSalary
+    GROUP BY Project
+    ORDER BY EmpProjectCount DESC; 
+
+27. SELECT FullName, ManagerId, DateOfJoining, City, COUNT (*)
+    FROM EmployeeDetails
+    GROUP BY FullName, ManagerId, DateOfJoining, City
+    HAVING COUNT(*) > 1;
+
+28. GIT LINK.
